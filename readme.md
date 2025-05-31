@@ -57,4 +57,3 @@ This app uses several Python libraries listed in the `requirements.txt` file. Ke
 * Pillow
 * NumPy
 
----

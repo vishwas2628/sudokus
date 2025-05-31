@@ -1,0 +1,38 @@
+{% extends "layout.html"%} {% block body %}
+
+<form method="post" enctype="multipart/form-data">
+    <h1>Upload Image</h1>
+    {% csrf_token %}
+    <label for="fileUpload" class="btn">
+        Upload Image
+        <input type="file" name="image" id="fileUpload" style="display:none" accept="image/*" required>
+    </label>
+    <button class="btn" type="submit">Upload and Process Sudoku</button>
+    
+</form>
+
+<img src="#" id="preview-image" alt="Uploaded Image" style="display:none; margin-top:10px">
+
+<script>
+    const fileInput = document.getElementById('fileUpload');
+    const previewImage = document.getElementById('preview-image');
+
+    fileInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onload = (e) => {
+        previewImage.src = e.target.result;
+        previewImage.style.display = 'block'; // Show the preview image
+        };
+
+        reader.readAsDataURL(file);
+    } else {
+        previewImage.src = '#';
+        previewImage.style.display = 'none'; // Hide the preview if no file is selected
+    }
+    });
+</script>
+{%endblock%}

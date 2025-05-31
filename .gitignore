@@ -3,3 +3,4 @@ test.py
 sudokugenrator
 tf_env
 db.sqllite3
+.gitignore

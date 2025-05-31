@@ -1,5 +1,3 @@
----
-
 # Sudoku Solver App
 
 A Django web application that solves Sudoku puzzles from images. Upload an image of a Sudoku puzzle, and the app will return the same image with the puzzle solved.
@@ -8,13 +6,15 @@ A Django web application that solves Sudoku puzzles from images. Upload an image
 
 * Upload an image of a Sudoku puzzle.
 * Automatically detects and solves the puzzle.
+* Uses an advanced **LLM-based model** for accurate digit recognition.
 * Returns the solved puzzle as an image.
 
 ## Technologies Used
 
 * **Django**: Web framework for building the app.
 * **OpenCV**: For image processing and Sudoku grid detection.
-* **TensorFlow**: For digit recognition in the Sudoku grid.
+* **TensorFlow**: For model integration and digit recognition.
+* **LLM Model**: Enhances accuracy in digit recognition by leveraging machine learning techniques for precise number identification.
 * **Pillow**: To manipulate and annotate the output image.
 * **NumPy**: For handling Sudoku grid computations.
 
@@ -23,7 +23,7 @@ A Django web application that solves Sudoku puzzles from images. Upload an image
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/sudoku-solver.git
+   git clone https://github.com/vishwas2628/sudoku-solver.git
    cd sudoku-solver
    ```
 
@@ -45,15 +45,5 @@ A Django web application that solves Sudoku puzzles from images. Upload an image
 
 1. Navigate to the homepage.
 2. Upload an image of a Sudoku puzzle.
-3. The app will process the image and return the solved puzzle.
-
-## Dependencies
-
-This app uses several Python libraries listed in the `requirements.txt` file. Key dependencies include:
-
-* Django
-* OpenCV
-* TensorFlow
-* Pillow
-* NumPy
+3. The app will process the image, accurately identify numbers using the LLM-based model, and return the solved puzzle.
 

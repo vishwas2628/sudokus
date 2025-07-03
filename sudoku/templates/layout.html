@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sudoku{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+    {% block styles %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo"><span>Sudoku</span><span class="dotcom">.com</span></a>
+            <div class="navbar-links">
+                <a href="/playsudoku/">Player</a>
+                <a href="/solver/">Solver</a>
+            </div>
+        </div>
+    </nav>
+    <main class="main-content">
+        {% block body %}
+        <!-- Content specific to each view -->
+        {% endblock %}
+    </main>
+</body>
+</html>

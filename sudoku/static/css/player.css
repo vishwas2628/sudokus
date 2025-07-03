@@ -1,0 +1,98 @@
+/* Sudoku Player Styles */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(9, 48px);
+    grid-template-rows: repeat(9, 48px);
+    gap: 0;
+    border: 3px solid #2d3a4b;
+    background: #fff;
+    margin: 2rem auto 1.5rem auto;
+    width: max-content;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+}
+
+.cell {
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 500;
+    border: 1px solid #bfc9d1;
+    outline: none;
+    background: #f7fafd;
+    transition: background 0.2s, border 0.2s;
+    color: #2d3a4b;
+}
+
+.cell[readonly] {
+    background: #e3effa;
+    color: #2d3a4b;
+    font-weight: bold;
+    border: 1px solid #bfc9d1;
+}
+
+/* Thicker borders for 3x3 boxes */
+.cell:nth-child(3n+1) {
+    border-left: 3px solid #2d3a4b;
+}
+.cell:nth-child(n+28):nth-child(-n+36),
+.cell:nth-child(n+55):nth-child(-n+63) {
+    border-top: 3px solid #2d3a4b;
+}
+.cell:nth-child(9n) {
+    border-right: 3px solid #2d3a4b;
+}
+.cell:nth-child(n+73) {
+    border-bottom: 3px solid #2d3a4b;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin: 1.5rem 0 1rem 0;
+}
+
+.btn {
+    background: #4e8cff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 1.7rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    background: #2d3a4b;
+    color: #fff;
+}
+
+.message {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: #4e8cff;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(9, 32px);
+        grid-template-rows: repeat(9, 32px);
+    }
+    .cell {
+        width: 32px;
+        height: 32px;
+        font-size: 1.1rem;
+    }
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+}

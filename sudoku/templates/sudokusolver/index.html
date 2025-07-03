@@ -1,0 +1,112 @@
+{% extends "layout.html"%} 
+{% block title %}
+    Sudoku Home
+{% endblock %}
+{% load static %}
+{% load i18n %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class="intro-title" style="margin-top: 24px;">
+  🧩 Sudoku Solver & Player Game
+</div>
+<div class="intro-flex" style="margin-bottom: 32px;">
+  <img src="{% static 'images/sudoku.png' %}" class="intro-img">
+  <div class="intro-text">
+    <p>
+      Welcome to the ultimate <strong>Sudoku experience</strong>! This project offers a powerful Sudoku game where you can:
+    </p>
+    <ul>
+      <li>🕹️ Play Sudoku puzzles of varying difficulty</li>
+      <li>🧠 Use logical thinking to solve puzzles manually</li>
+      <li>⚙️ Instantly solve any valid Sudoku puzzle using our built-in solver</li>
+      <li>📝 Get hints, auto-fill pencil marks, or even watch the solving steps live!</li>
+    </ul>
+    <p>
+      Whether you're a complete beginner or an advanced puzzler, this game is built to challenge and guide you. Ready to sharpen your mind and have fun?
+    </p>
+  </div>
+  <img src="" alt="Sudoku Solving" class="intro-img">
+</div>
+
+<h1 class="emoji-title">🧠 What is Sudoku?</h1>
+<p>Sudoku is a logic-based puzzle where you fill a 9×9 grid so that:</p>
+<ul>
+  <li>Each <strong>row</strong> contains numbers 1 through 9 <em>with no repeats</em></li>
+  <li>Each <strong>column</strong> contains numbers 1 through 9 <em>with no repeats</em></li>
+  <li>Each of the nine <strong>3×3 boxes</strong> (sub-grids) contains numbers 1 through 9 <em>with no repeats</em></li>
+</ul>
+
+<h2 class="emoji-title">✅ Basic Rules</h2>
+<ul>
+  <li>You cannot repeat a number in any <strong>row</strong></li>
+  <li>You cannot repeat a number in any <strong>column</strong></li>
+  <li>You cannot repeat a number in any <strong>3×3 box</strong></li>
+  <li>You're usually given some numbers to start, called "<strong>clues</strong>" or "<strong>givens</strong>".</li>
+</ul>
+
+<h2 class="emoji-title">🛠️ Beginner Strategies</h2>
+<ol>
+  <li><strong>Scan for missing numbers:</strong>
+    <div class="tip">Look for rows, columns, or boxes with many numbers already filled. Find which number is missing and see if it can go in only one possible position.</div>
+  </li>
+  <li><strong>Use the "Only One Possible Place" method:</strong>
+    <div class="tip">If a number can go in only one cell in a row/column/box, put it there.</div>
+  </li>
+  <li><strong>Pencil marks:</strong>
+    <div class="tip">Write small possible numbers in empty cells to help eliminate options later.</div>
+  </li>
+  <li><strong>Crosshatching:</strong>
+    <div class="tip">Focus on a number (e.g. 5), and scan all rows and columns to narrow down where 5 can go in each box.</div>
+  </li>
+</ol>
+
+<h2 class="emoji-title">🧩 Easy Puzzle Example (Start Here)</h2>
+<pre>
+5 3 _ | _ 7 _ | _ _ _
+6 _ _ | 1 9 5 | _ _ _
+_ 9 8 | _ _ _ | _ 6 _
+------+-------+------
+8 _ _ | _ 6 _ | _ _ 3
+4 _ _ | 8 _ 3 | _ _ 1
+7 _ _ | _ 2 _ | _ _ 6
+------+-------+------
+_ 6 _ | _ _ _ | 2 8 _
+_ _ _ | 4 1 9 | _ _ 5
+_ _ _ | _ 8 _ | _ 7 9
+</pre>
+
+<div class="tip">
+  <strong>Tips to solve:</strong><br>
+  - Start with the number 1. Look at each row, column, and box to see where 1 can fit.<br>
+  - Move on to 2, 3, ..., 9 using the same method.<br>
+  - Use pencil marks if needed.
+</div>
+
+<h2 class="emoji-title">🧩 Another Practice Puzzle</h2>
+<pre>
+_ _ _ | 2 6 _ | 7 _ 1
+6 8 _ | _ 7 _ | _ 9 _
+1 9 _ | _ _ 4 | 5 _ _
+------+-------+------
+8 2 _ | 1 _ _ | _ 4 _
+_ _ 4 | 6 _ 2 | 9 _ _
+_ 5 _ | _ _ 3 | _ 2 8
+------+-------+------
+_ _ 9 | 3 _ _ | _ 7 4
+_ 4 _ | _ 5 _ | _ 3 6
+7 _ 3 | _ 1 8 | _ _ _
+</pre>
+
+<h2 class="emoji-title">📘 Recommended Learning Resources</h2>
+<ul>
+  <li><a href="https://www.sudokuwiki.org/" target="_blank">Sudoku Wiki – Techniques and strategies</a></li>
+  <li><a href="https://www.websudoku.com/" target="_blank">Web Sudoku – Online practice</a></li>
+  <li><a href="https://sudoku.com" target="_blank">Sudoku.com App – Mobile friendly with hints</a></li>
+</ul>
+<hr>
+<p><strong>Want help solving one puzzle step-by-step?</strong> Just ask!</p>
+{% endblock %}

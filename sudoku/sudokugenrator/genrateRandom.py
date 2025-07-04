@@ -2,14 +2,14 @@
 import pandas as pd
 import numpy as np
 
-import kagglehub
+# import kagglehub
 
-# Download latest version
-path = kagglehub.dataset_download("bryanpark/sudoku")
+# # Download latest version
+# path = kagglehub.dataset_download("bryanpark/sudoku")
 
-print("Path to dataset files:", path)
+# print("Path to dataset files:", path)
 
-#path = "C:/Users/HP/OneDrive/Desktop/sudokus/sudoku/static/sudoku.csv"
+path = "C:/Users/HP/OneDrive/Desktop/sudokus/sudoku/static/sudoku.csv"
 def genrateRandom():
     try:
         chunk_container = pd.read_csv(f"{path}")
